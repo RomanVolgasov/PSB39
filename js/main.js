@@ -2,7 +2,7 @@ jQuery(document).ready(function($){
   // browser window scroll (in pixels) after which the "menu" link is shown
   var offset = 300;
 
-  var navigationContainer = $('#cd-nav'),
+  var navigationContainer = $('.cd-nav'),
     mainNavigation = navigationContainer.find('#cd-main-nav ul');
 
   //hide or show the "menu" link
