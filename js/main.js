@@ -1,3 +1,8 @@
+$(window).on('load', function () {
+  var $preloader = $('#page-preloader');
+  $preloader.delay(350).fadeOut('slow');
+});
+
 jQuery(document).ready(function($){
   // browser window scroll (in pixels) after which the "menu" link is shown
   var offset = 300;
