@@ -1,9 +1,10 @@
 $white: #FFFFFF
 $light: #D7D9D4
 $orange: #F04A21
+$yellow: #F1C56E
+$blue: #73848F
 $dark: #272624
 $catalog_bg: #1E2E3E
-$default-font: #F1C56E
 
 html *
   -webkit-font-smoothing: antialiased
@@ -24,6 +25,8 @@ body
   font-size: 100%
   font-family: 'Comfortaa', noraml
   font-weight: 400
+  z-index: 1
+  position: relative
 
 a
   color: $orange
@@ -40,7 +43,9 @@ h3
 h1
   font-size: 20px
   font-size: 3.75em
-
+h2
+  font-size: 18px
+  font-size: 3.25em
 img
   max-width: 100%
 
@@ -62,7 +67,71 @@ table
   tr
     &:nth-child(2n)
       background-color: $orange
-      color: $light
+      color: $white
+
+/* ПРЕЛОАДЕР */
+#page-preloader
+  background-color: $dark
+  bottom: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 100
+.title-loader
+  position: absolute
+  top: 40%
+  left: 50%
+  transform: translate(-50%, -50%)
+  color: $white
+  font-weight: 100
+  font-size: 2em
+.splash__line
+  position: absolute
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  background: #262626
+  margin: 0 auto
+  position: relative
+  overflow: hidden
+  transition: width .5s ease-out
+  > div
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    transform: translateX(-100%)
+    &:after
+      content: ""
+      display: block
+      height: 100%
+      width: 50%
+      opacity: 1
+      transition: opacity .2s ease-out
+    &:nth-child(1)
+      animation: slideIn 1.8s infinite
+      animation-timing-function: cubic-bezier(1, 0.01, 0.74, 0.22)
+      &:after
+        background: $white
+    &:nth-child(2)
+      animation: slideIn 1.8s infinite .1s
+      animation-timing-function: cubic-bezier(1, 0.01, 0.74, 0.22)
+      &:after
+        background: $orange
+    &:nth-child(3)
+      animation: slideIn 1.8s infinite .2s
+      animation-timing-function: cubic-bezier(1, 0.01, 0.74, 0.22)
+      &:after
+        background: #4b4b4b
+@keyframes slideIn
+  0%
+    transform: translateX(-65%) skewX(-15deg)
+
+  100%
+    transform: translateX(100%) skewX(-15deg)
 
 .parallax-window
   background-attachment: local
@@ -341,6 +410,7 @@ table
   h2
     color: $dark
     font-weight: 400
+    font-size: 1.3em
     margin: 0
     word-spacing: -0.15em
   p
@@ -430,6 +500,7 @@ figure.effect-zoe
   left: 0
   z-index: 10
   opacity: 0
+  margin-top: -20px
   pointer-events: none
   -webkit-transition: all 0.3s
   -moz-transition: all 0.3s
@@ -447,7 +518,7 @@ figure.effect-zoe
     border-radius: 5px
     color: #444
     h3
-      color: #D7D9D4
+      color: $orange
       font-weight: bold
       text-align: left
 .modal-close
@@ -463,14 +534,127 @@ figure.effect-zoe
   &:hover
     color: #000
 
-
-/* ФУТЕР */
-footer
+/* FEATURES */
+.features
+  text-align: center
+  max-width: 1170px
+  margin: 0 auto
+  width: 90%
+  p
+    font-size: 2.2em
+  h3
+    margin-top: -10px
+    font-size: 4em
+    color: $dark
+.features-bottom p
+  color: $white
+.features-bg
   background-color: $light
-  min-height: 400px
+  min-height: 520px
+
+/* ОБРАТНАЯ СВЯЗЬ */
+.callback
+  background-color: $orange
+  min-height: 520px
+.callback-bg-form
+  h2
+    padding: 2.5em 0
+    color: $dark
+  p
+    text-align: center
+    font-size: 1.3em
+.callback-title
+  display: block
+  text-transform: uppercase
+  font-size: 0.6em
+  font-weight: 100
+.callback-tel
+  display: block
+  font-size: 1em
+  font-weight: 100
+
+/* ТАБЫ */
+.mounting-bg
+  background-color: $catalog_bg
+  overflow: hidden
+.tab
+  padding: 50px 0
+  margin-bottom: 20px
+  position: relative
+  overflow: hidden
+  width: 100%
+  margin: 0 auto
+  line-height: 1.5
+  font-weight: 300
+  color: $light
+  -webkit-font-smoothing: antialiased
+.tabs
+  display: table
+  position: relative
+  overflow: hidden
+  margin: 0
+  width: 100%
+  left: -40px
+  li
+    float: left
+    line-height: 38px
+    font-size: 2em
+    overflow: hidden
+    padding: 0
+    position: relative
+  a
+    background-color: $white
+    border-bottom: 1px solid $white
+    color: $dark
+    font-weight: 400
+    display: block
+    letter-spacing: 0
+    outline: none
+    padding: 10px 20px
+    text-decoration: none
+    -webkit-transition: all 0.2s ease-in-out
+    -moz-transition: all 0.2s ease-in-out
+    transition: all 0.2s ease-in-out
+    border-bottom: 2px solid $blue
+.tabfasad .tab_content .tabs_item img
+  padding-left: 20px
+  float: right
+.tabpol .tab_content .tabs_item img
+  padding-right: 20px
+  float: left
+.tabs_item
+  display: none
+  padding: 30px 0
+  h4
+    margin-top: 0
+    font-size: 2.4em
+    font-weight: bold
+    color: $blue
+  img
+    padding-top: 3em
+    width: 450px
+    padding-bottom: 10px
+  &:first-child
+    display: block
+  p
+    text-align: justify
+    font-size: 2em
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+.current a
+  color: #fff
+  background: $blue
+
+
+.footer
+  background-color: $yellow
+  min-height: 500px
 
 /* @MEDIA-Запросы */
 @media only screen and (min-width: 768px)
+  .title-loader
+    font-size: 5em
   header
     .cd-logo
       margin: 0 auto
@@ -490,11 +674,36 @@ footer
     margin-right: 4%
     &:nth-child(2n)
       margin-right: 0
+  .grid li figure h2
+    font-size: 1.58em
   table
     tr td
       font-size: 1.3em
       padding: 10px 10px
+  .features-top img
+    padding-top: 0.3em
+    width: 150px
+  .features-bottom img
+    padding-top: 3.3em
+    width: 150px  
+  .callback-bg-form h2
+    color: $dark
+    padding: 5em 0
+  .callback-title
+    font-size: 1.1em
+  .callback-tel
+    font-size: 2em
+@media (min-width: 1024px) and (max-width: 1169px)
+  .callback-bg-form h2
+    color: $white
+    padding: 1em 0
+  .callback-title
+    font-size: 1.1em
+  .callback-tel
+    font-size: 2em
 @media only screen and (min-width: 1170px)
+  .title-loader
+    font-size: 5em
   header
     .cd-logo
       left: 5%
@@ -515,6 +724,8 @@ footer
     padding-bottom: 80px
     h1
       padding: 25px 0
+  .grid li figure h2
+    font-size: 1.7em
   .cd-nav
     ul
       background: transparent
@@ -626,3 +837,19 @@ footer
   .modal-window
      > div
       width: 61%
+  .features-top img
+    padding-top: 2.3em
+    width: 190px
+  .features-bottom img
+    padding-top: 2.3em
+    width: 190px
+  .callback-bg-form h2
+    color: $white
+    padding: 1em 0
+  .callback-title
+    letter-spacing: 0.11em
+    font-size: 1.5em
+    font-weight: 100
+  .callback-tel
+    font-size: 3em
+    font-weight: 700
