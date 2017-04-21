@@ -407,11 +407,11 @@ table
       white-space: nowrap
       width: 100%
       z-index: 10
-  h2
+  h3
     color: $dark
     font-weight: 400
-    font-size: 1.3em
-    margin: 0
+    font-size: 1.2em
+    margin-top: -45px
     word-spacing: -0.15em
   p
     font-size: 68.5%
@@ -431,7 +431,7 @@ figure.effect-zoe
     transition: transform 0.35s
     -webkit-transform: translate3d(0, 100%, 0)
     transform: translate3d(0, 100%, 0)
-  h2
+  h3
     float: left
   p.icon-links a
     float: right
@@ -451,7 +451,7 @@ figure.effect-zoe
     -webkit-transition: opacity 0.35s
     transition: opacity 0.35s
     -webkit-backface-visibility: hidden
-  h2
+  h3
     -webkit-transition: -webkit-transform 0.35s
     transition: transform 0.35s
     -webkit-transform: translate3d(0, 200%, 0)
@@ -468,7 +468,7 @@ figure.effect-zoe
       -webkit-font-smoothing: antialiased
       -moz-osx-font-smoothing: grayscale
 figure.effect-zoe
-  h2
+  h3
     display: inline-block
   &:hover
     p.description
@@ -517,7 +517,8 @@ figure.effect-zoe
     background: #fff
     border-radius: 5px
     color: #444
-    h3
+    span
+      font-size: 1.4em
       color: $orange
       font-weight: bold
       text-align: left
@@ -542,7 +543,7 @@ figure.effect-zoe
   width: 90%
   p
     font-size: 2.2em
-  h3
+  h2
     margin-top: -10px
     font-size: 4em
     color: $dark
@@ -570,16 +571,19 @@ figure.effect-zoe
   font-weight: 100
 .callback-tel
   display: block
-  font-size: 1em
+  padding-top: 10px
+  font-size: 0.8em
   font-weight: 100
 
 /* ТАБЫ */
+.mounting-title
+  text-align: left
+  padding: 40px 0 0 0
 .mounting-bg
   background-color: $catalog_bg
   overflow: hidden
 .tab
-  padding: 50px 0
-  margin-bottom: 20px
+  padding: 20px 0
   position: relative
   overflow: hidden
   width: 100%
@@ -594,9 +598,10 @@ figure.effect-zoe
   overflow: hidden
   margin: 0
   width: 100%
-  left: -40px
+  left: -20px
   li
     float: left
+    width: 105px
     line-height: 38px
     font-size: 2em
     overflow: hidden
@@ -616,23 +621,18 @@ figure.effect-zoe
     -moz-transition: all 0.2s ease-in-out
     transition: all 0.2s ease-in-out
     border-bottom: 2px solid $blue
-.tabfasad .tab_content .tabs_item img
-  padding-left: 20px
-  float: right
-.tabpol .tab_content .tabs_item img
-  padding-right: 20px
-  float: left
 .tabs_item
   display: none
   padding: 30px 0
-  h4
+  h3
     margin-top: 0
     font-size: 2.4em
     font-weight: bold
+    text-align: left
     color: $blue
   img
     padding-top: 3em
-    width: 450px
+    width: 100%
     padding-bottom: 10px
   &:first-child
     display: block
@@ -646,11 +646,29 @@ figure.effect-zoe
   color: #fff
   background: $blue
 
-
+.footer1-bg
+  min-height: 10px
+  background-color: #F2572F
+.footer2-bg
+  min-height: 15px
+  background-color: #F16A1C
+.footer3-bg
+  min-height: 20px
+  background-color: #F27F14
 .footer
-  background-color: $yellow
-  min-height: 500px
-
+  margin-top: 40px
+  background-color: #F2A416
+  overflow: hidden
+  .footer-phone
+    font-size: 3em
+    text-align: center
+    color: $white
+    margin-top: -150px
+    padding-bottom: 80px
+.footed-description
+  color: $white
+  font-size: 3em
+  padding-left: 40px
 /* @MEDIA-Запросы */
 @media only screen and (min-width: 768px)
   .title-loader
@@ -686,13 +704,42 @@ figure.effect-zoe
   .features-bottom img
     padding-top: 3.3em
     width: 150px  
-  .callback-bg-form h2
-    color: $dark
-    padding: 5em 0
+  .callback-bg-form
+    h2
+      color: $dark
+      padding: 5em 0
+    p
+      padding-top: 80px
+      color: $white
+      text-align: center
+      font-size: 3.3em
   .callback-title
     font-size: 1.1em
   .callback-tel
     font-size: 2em
+  .tabs
+    left: -40px
+    li
+      float: left
+      line-height: 38px
+      font-size: 2em
+      overflow: hidden
+      padding: 0
+      position: relative
+  .tabfasad .tab_content .tabs_item img
+    padding-left: 20px
+    float: right
+  .tabpol .tab_content .tabs_item img
+    padding-right: 20px
+    float: left
+  .tabs_item  img
+    padding-top: 3em
+    width: 450px
+    padding-bottom: 10px  
+  .footer
+    .footer-phone
+      margin-top: -100px
+      font-size: 2em
 @media (min-width: 1024px) and (max-width: 1169px)
   .callback-bg-form h2
     color: $white
@@ -701,6 +748,12 @@ figure.effect-zoe
     font-size: 1.1em
   .callback-tel
     font-size: 2em
+  .footer
+    .footer-phone
+      font-size: 2em
+      margin-top: -110px
+  .footer-map
+    visibility: hidden
 @media only screen and (min-width: 1170px)
   .title-loader
     font-size: 5em
@@ -726,6 +779,41 @@ figure.effect-zoe
       padding: 25px 0
   .grid li figure h2
     font-size: 1.7em
+  
+  .cd-gallery-items li
+    width: 31%
+    float: left
+    margin-bottom: 2.5em
+    margin-right: 3.5%
+    &:nth-child(2n)
+      margin-right: 3.5%
+    &:nth-child(3n)
+      margin-right: 0
+  .modal-window
+     > div
+      width: 61%
+  .features-top img
+    padding-top: 2.3em
+    width: 190px
+  .features-bottom img
+    padding-top: 2.3em
+    width: 190px
+  .callback-bg-form h2
+    color: $white
+    padding: 1em 0
+  .callback-title
+    letter-spacing: 0.11em
+    font-size: 1.5em
+    font-weight: 100
+  .callback-tel
+    font-size: 3em
+    font-weight: 700
+  .footer
+    .footer-phone
+      font-size: 3em
+      margin-top: -150px
+      padding-bottom: 110px
+@media only screen and (min-width: 1740px)
   .cd-nav
     ul
       background: transparent
@@ -825,31 +913,3 @@ figure.effect-zoe
     -webkit-animation: cd-bounce-in 0.3s linear
     -moz-animation: cd-bounce-in 0.3s linear
     animation: cd-bounce-in 0.3s linear
-  .cd-gallery-items li
-    width: 31%
-    float: left
-    margin-bottom: 2.5em
-    margin-right: 3.5%
-    &:nth-child(2n)
-      margin-right: 3.5%
-    &:nth-child(3n)
-      margin-right: 0
-  .modal-window
-     > div
-      width: 61%
-  .features-top img
-    padding-top: 2.3em
-    width: 190px
-  .features-bottom img
-    padding-top: 2.3em
-    width: 190px
-  .callback-bg-form h2
-    color: $white
-    padding: 1em 0
-  .callback-title
-    letter-spacing: 0.11em
-    font-size: 1.5em
-    font-weight: 100
-  .callback-tel
-    font-size: 3em
-    font-weight: 700
