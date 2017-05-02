@@ -1,6 +1,6 @@
 $white: #FFFFFF
 $light: #D7D9D4
-$orange: #F04A21
+$red: #ff4141
 $yellow: #F1C56E
 $blue: #73848F
 $dark: #272624
@@ -29,7 +29,7 @@ body
   position: relative
 
 a
-  color: $orange
+  color: $red
   text-decoration: none
 
 h1,
@@ -51,12 +51,18 @@ img
 
 header
   background: $white
-  height: 100vh
+  height: 83vh
   position: relative
   .cd-logo
     text-align: center
+    padding: 2em
     z-index: 20
     width: 100%
+
+.wrapper-header h1
+  color: $dark
+  padding: 20px
+  font-size: 2.1em
 
 table
   border-collapse: collapse
@@ -66,7 +72,7 @@ table
     padding: 7px 7px
   tr
     &:nth-child(2n)
-      background-color: $orange
+      background-color: $red
       color: $white
 
 /* ПРЕЛОАДЕР */
@@ -120,7 +126,7 @@ table
       animation: slideIn 1.8s infinite .1s
       animation-timing-function: cubic-bezier(1, 0.01, 0.74, 0.22)
       &:after
-        background: $orange
+        background: $red
     &:nth-child(3)
       animation: slideIn 1.8s infinite .2s
       animation-timing-function: cubic-bezier(1, 0.01, 0.74, 0.22)
@@ -189,6 +195,7 @@ table
       backface-visibility: hidden
       list-style: none
     &.is-visible
+      border-bottom: none
       -webkit-transform: scale(1)
       -moz-transform: scale(1)
       -ms-transform: scale(1)
@@ -239,7 +246,7 @@ table
   width: 65px
   z-index: 2
   span
-    background: $orange
+    background: $red
     height: 2px
     display: block
     left: 50%
@@ -288,7 +295,7 @@ table
     span
       background: rgba(232, 74, 100, 0)
       &::before
-        background: $orange
+        background: $red
         top: 0
         -webkit-transform: rotate(135deg)
         -moz-transform: rotate(135deg)
@@ -296,7 +303,7 @@ table
         -o-transform: rotate(135deg)
         transform: rotate(135deg)
       &::after
-        background: $orange
+        background: $red
         bottom: 0
         -webkit-transform: rotate(225deg)
         -moz-transform: rotate(225deg)
@@ -439,7 +446,7 @@ figure.effect-zoe
     font-size: 1.4em
   &:hover p.icon-links a
     &:hover, &:focus
-      color: #F04A21
+      color: $red
   p.description
     position: absolute
     top: 5em
@@ -519,7 +526,7 @@ figure.effect-zoe
     color: #444
     span
       font-size: 1.4em
-      color: $orange
+      color: $red
       font-weight: bold
       text-align: left
 .modal-close
@@ -555,7 +562,7 @@ figure.effect-zoe
 
 /* ОБРАТНАЯ СВЯЗЬ */
 .callback
-  background-color: $orange
+  background-color: $red
   min-height: 520px
 .callback-bg-form
   h2
@@ -647,26 +654,24 @@ figure.effect-zoe
 
 .footer1-bg
   min-height: 10px
-  background-color: #F2572F
+  background-color: #a73030
 .footer2-bg
   min-height: 15px
-  background-color: #F16A1C
+  background-color: #c73939
 .footer3-bg
   min-height: 20px
-  background-color: #F27F14
+  background-color: #da3939
 .footer
   margin-top: 40px
-  background-color: #F2A416
+  background-color: $red
   overflow: hidden
   .footer-phone
     font-size: 3em
     text-align: center
     color: $white
-    margin-top: -150px
     padding-bottom: 80px
   .footer-logo img
-    min-width: 270px
-    min-height: 500px
+    min-width: 170px
 .footed-description
   color: $white
   font-size: 3em
@@ -676,15 +681,17 @@ figure.effect-zoe
   .title-loader
     font-size: 5em
   header
+    height: 91vh
     .cd-logo
       margin: 0 auto
       width: 400px
-    h1
-      font-size: 40px
-      font-size: 5.5rem
-      font-weight: 700
-      position: relative
-      top: 20%
+  .wrapper-header h1
+    color: $dark
+    font-size: 40px
+    font-size: 5.5rem
+    font-weight: 700
+    position: relative
+    top: 20%
   main
     padding-bottom: 25px
   .cd-gallery-items li
@@ -739,10 +746,15 @@ figure.effect-zoe
     width: 450px
     padding-bottom: 10px  
   .footer
+    img
+      padding-top: 4em
     .footer-phone
-      margin-top: -100px
       font-size: 2em
 @media (min-width: 1024px) and (max-width: 1169px)
+  header
+    height: 87vh
+  .wrapper-header h1
+    color: $white
   .callback-bg-form h2
     color: $white
     padding: 1em 0
@@ -751,30 +763,32 @@ figure.effect-zoe
   .callback-tel
     font-size: 2em
   .footer
+    max-height: 340px
     .footer-phone
       font-size: 2em
-      margin-top: -110px
   .footer-map
     visibility: hidden
 @media only screen and (min-width: 1170px)
   .title-loader
     font-size: 5em
   header
+    height: 87vh
     .cd-logo
       left: 5%
       position: absolute
-      top: 19px
+      top: 8px
       width: 300px
-    h1
-      font-size: 40px
-      font-size: 4.5rem
-      font-weight: 700
-      display: block
-      position: relative
-      top: 35%
-      margin: 0 auto
-      max-width: 600px
-      z-index: 20
+  .wrapper-header h1
+    color: $white
+    font-size: 40px
+    font-size: 4.5rem
+    font-weight: 700
+    display: block
+    position: relative
+    top: 35%
+    margin: 0 auto
+    max-width: 840px
+    z-index: 20
   main
     padding-bottom: 80px
     h1
@@ -813,15 +827,23 @@ figure.effect-zoe
   .footer
     .footer-phone
       font-size: 3em
-      margin-top: -150px
       padding-bottom: 110px
+  .footed-description
+    margin-top: 20px
+  .footer-map
+    padding-bottom: 100px
+    margin-top: -80px
 @media only screen and (min-width: 1740px)
+  header
+    height: 91vh
   .cd-nav
     ul
       background: transparent
       bottom: auto
       box-shadow: none
+      border-bottom: 3px solid #e4181f
       max-width: none
+      // margin-right: 160px
       position: absolute
       top: 36px
       -webkit-transform: scale(1)
@@ -837,7 +859,7 @@ figure.effect-zoe
     li
       display: inline-block
       a
-        color: $white
+        color: $dark
         font-size: 1.85em
         font-weight: 700
         border-bottom: none
@@ -845,7 +867,7 @@ figure.effect-zoe
         padding: .4em
         margin-left: 1.6em
         &:hover
-          color: $orange
+          color: $red
     &.is-fixed ul
       background: $white
       box-shadow: 0 0 10px rgba(154, 154, 154, 0.4)
@@ -863,7 +885,7 @@ figure.effect-zoe
       li
         display: block
         a
-          color: $orange
+          color: $red
           padding: 1.6em
           margin-left: 0
           &:hover
