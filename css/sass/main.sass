@@ -774,10 +774,10 @@ figure.effect-zoe
   header
     height: 87vh
     .cd-logo
-      left: 5%
+      left: 2%
       position: absolute
-      top: 8px
-      width: 300px
+      top: 22px
+      width: 230px
   .wrapper-header h1
     color: $white
     font-size: 40px
@@ -795,7 +795,41 @@ figure.effect-zoe
       padding: 25px 0
   .grid li figure h2
     font-size: 1.7em
-  
+  .cd-nav
+    ul
+      background: transparent
+      bottom: auto
+      box-shadow: none
+      border-bottom: 3px solid #e4181f
+      max-width: none
+      // margin-right: 160px
+      position: absolute
+      padding-left: 0
+      top: 36px
+      -webkit-transform: scale(1)
+      -moz-transform: scale(1)
+      -ms-transform: scale(1)
+      -o-transform: scale(1)
+      transform: scale(1)
+      -webkit-transition: all 0s
+      -moz-transition: all 0s
+      transition: all 0s
+      visibility: visible
+      width: auto
+    li
+      display: inline-block
+      a
+        color: $dark
+        font-size: 1.85em
+        font-weight: 700
+        border-bottom: none
+        opacity: 1
+        padding: .4em
+        margin-left: 1.6em
+        &:hover
+          color: $red
+  .cd-nav ul li:nth-child(1) a
+    margin-left: 0;
   .cd-gallery-items li
     width: 31%
     float: left
