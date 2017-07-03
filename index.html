@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/outdatedbrowser.min.css">
   <!-- Иконочные шрифты (расскоментируй нужный) -->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
 
@@ -609,8 +610,32 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/main.js"></script>
-  <!-- Yandex.Metrika counter -->
+  <script src="js/outdatedbrowser.min.js"></script>
   <script type="text/javascript">
+      //event listener: DOM ready
+      function addLoadEvent(func) {
+          var oldonload = window.onload;
+          if (typeof window.onload != 'function') {
+              window.onload = func;
+          } else {
+              window.onload = function() {
+                  if (oldonload) {
+                      oldonload();
+                  }
+                  func();
+              }
+          }
+      }
+      //call plugin function after DOM ready
+      addLoadEvent(function(){
+          outdatedBrowser({
+              bgColor: '#f25648',
+              color: '#ffffff',
+              lowerThan: 'borderImage',
+              languagePath: 'lang/ru.html'
+          })
+      });
+
       (function (d, w, c) {
           (w[c] = w[c] || []).push(function() {
               try {
@@ -636,6 +661,6 @@
           } else { f(); }
       })(document, window, "yandex_metrika_callbacks");
   </script>
-  <!-- /Yandex.Metrika counter -->
+  <div id="outdated"></div>
 </body>
 </html>
