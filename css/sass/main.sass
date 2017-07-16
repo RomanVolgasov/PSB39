@@ -62,7 +62,7 @@ header
 .wrapper-header h1
   color: $dark
   padding: 20px
-  font-size: 2.1em
+  font-size: 1.8em
 
 table
   border-collapse: collapse
@@ -434,6 +434,7 @@ figure.effect-zoe
     top: auto
     padding: 1em
     height: 3.75em
+    z-index: 20
     -webkit-transition: -webkit-transform 0.35s
     transition: transform 0.35s
     -webkit-transform: translate3d(0, 100%, 0)
@@ -497,6 +498,26 @@ figure.effect-zoe
         -webkit-transition-delay: 0.2s
         transition-delay: 0.2s
 
+/* Цена */
+.price
+  color: $white
+  background-color: rgba(218, 0, 0, 0.7)
+  padding: 15px 20px
+  display: block
+  font-family: Tahoma,Verdana,Segoe,sans-serif
+  font-size: 1.5em
+  font-weight: 600
+  position: absolute
+  top: 75%
+  left: -100px
+  width: 100%
+  z-index: 1
+  transform: rotate(45deg)
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+
 /* МОДАЛЬНОЕ ОКНО */
 .modal-window
   position: fixed
@@ -505,7 +526,7 @@ figure.effect-zoe
   right: 0
   bottom: 0
   left: 0
-  z-index: 10
+  z-index: 100
   opacity: 0
   margin-top: -20px
   pointer-events: none
@@ -671,7 +692,10 @@ figure.effect-zoe
     color: $white
     padding-bottom: 80px
   .footer-logo img
+    display: block
     min-width: 170px
+    padding-top: 4em
+    margin: 0 auto
 .footed-description
   color: $white
   font-size: 3em
@@ -688,7 +712,7 @@ figure.effect-zoe
   .wrapper-header h1
     color: $dark
     font-size: 40px
-    font-size: 5.5rem
+    font-size: 5.3rem
     font-weight: 700
     position: relative
     top: 20%
@@ -750,6 +774,10 @@ figure.effect-zoe
       padding-top: 4em
     .footer-phone
       font-size: 2em
+  .price
+    font-size: 1.9em
+    top: 75%
+    left: -100px
 @media (min-width: 1024px) and (max-width: 1169px)
   header
     height: 87vh
@@ -768,6 +796,11 @@ figure.effect-zoe
       font-size: 2em
   .footer-map
     visibility: hidden
+  .price
+    font-size: 2.8em
+    top: 70%
+    left: -120px
+    width: 100%
 @media only screen and (min-width: 1170px)
   .title-loader
     font-size: 5em
@@ -781,13 +814,13 @@ figure.effect-zoe
   .wrapper-header h1
     color: $white
     font-size: 40px
-    font-size: 4.5rem
+    font-size: 5.6rem
     font-weight: 700
     display: block
     position: relative
     top: 35%
     margin: 0 auto
-    max-width: 840px
+    max-width: 1060px
     z-index: 20
   main
     padding-bottom: 80px
@@ -867,6 +900,10 @@ figure.effect-zoe
   .footer-map
     padding-bottom: 100px
     margin-top: -80px
+  .price
+    font-size: 2.5em
+    top: 70%
+    left: -100px
 @media only screen and (min-width: 1740px)
   header
     height: 91vh
@@ -971,3 +1008,7 @@ figure.effect-zoe
     -webkit-animation: cd-bounce-in 0.3s linear
     -moz-animation: cd-bounce-in 0.3s linear
     animation: cd-bounce-in 0.3s linear
+  .price
+    font-size: 2.2em
+    top: 70%
+    left: -100px
