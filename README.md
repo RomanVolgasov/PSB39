@@ -1,5 +1,5 @@
-[cover]: 
-[seoptimer]: 
+[cover]: https://github.com/RomanVolgasov/PSB39/blob/master/img/achievement/cover.jpg
+[seoptimer]: https://github.com/RomanVolgasov/PSB39/blob/master/img/achievement/seoptimer.jpg
 
 ![cover]
 
